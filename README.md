@@ -1,5 +1,7 @@
 # Superheat™ Templates
 
+**English** · [中文](README.zh-CN.md)
+
 Brand-standard templates, a design system, and AI-agent skills for building
 **Superheat pitch decks, sales decks, and white papers** — so anyone on the team can
 produce a well-formatted, on-brand document without starting from a blank page.
