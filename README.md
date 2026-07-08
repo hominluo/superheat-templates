@@ -3,8 +3,7 @@
 Brand-standard templates, a design system, and AI-agent skills for building
 **Superheat pitch decks, sales decks, and white papers** — so anyone on the team can
 produce a well-formatted, on-brand document without starting from a blank page.
-Works by hand, or drive it with **Claude Code** or **Codex** (see
-[Using with AI agents](#using-with-ai-agents)).
+Works by hand, or just ask **Claude Code** or **Codex** to build it (see [Use it](#use-it)).
 
 > The heater is the commodity. The **presentation** shouldn't be. Every Superheat
 > deck and paper should look like it came from the same house — same orange, same
@@ -32,67 +31,24 @@ superheat-templates/
 └── CONTRIBUTING.md    how to change a brand rule and keep everything in sync
 ```
 
-## Pick your path
+## Use it
 
-**I want to build a deck/paper by hand →**
-Copy a file from [`templates/`](templates/), fill in the `[[placeholders]]`, open in
-Chrome, print to PDF. That's it — no build step, no dependencies.
+**Just ask an AI agent (easiest).** Open this repo in **Claude Code** or **Codex** and ask:
 
-- [Pitch / sales deck guide](templates/pitch-deck/README.md)
-- [White paper / memo guide](templates/whitepaper/README.md)
+> "Build a Superheat pitch deck from this memo." · "Draft a Superheat whitepaper on X."
 
-**I want an AI agent to build it for me →**
-See [Using with AI agents](#using-with-ai-agents) below — works with Claude Code, Codex,
-or any coding agent. In short: *"Build a Superheat pitch deck from this memo."*
+The agent reads the rules on its own (`CLAUDE.md` / [`AGENTS.md`](AGENTS.md)), copies the
+right template, fills it in, and hands you a print-ready HTML file. Nothing to configure.
 
-**I want to understand or extend the brand →**
-Read the [design system](design-system/README.md) and the
-[component gallery](components/README.md).
+*In Claude Code, want it as a one-word command?* Install the skills once:
 
-## Using with AI agents
+```bash
+cp -r superheat-templates/skills/*  ~/.claude/skills/
+```
 
-This repo is built to be **driven by a coding agent**. The brand rules and the exact
-build workflow live in two agent-readable files so a model produces on-brand output
-without you spelling out the design each time:
-
-- **[`AGENTS.md`](AGENTS.md)** — the tool-agnostic playbook (workflow + brand rules).
-  Codex, Cursor, and most agents read this automatically from the repo root.
-- **[`CLAUDE.md`](CLAUDE.md)** — Claude Code specifics; defers to `AGENTS.md` for the rules.
-- **[`skills/`](skills/)** — two skills (`superheat-pitch-deck`, `superheat-whitepaper`)
-  that package the workflow as a first-class, auto-invoked capability in Claude Code.
-
-### With Claude Code
-
-1. Install the skills once (per-project or personal) — see [`skills/README.md`](skills/README.md):
-   ```bash
-   cp -r superheat-templates/skills/*  ~/.claude/skills/     # personal, all projects
-   ```
-2. Keep `superheat-templates` checked out near your work (a sibling folder is easiest).
-3. Just ask — the matching skill fires automatically:
-   > "Build a Superheat investor deck from `notes.md`."
-   > "Draft a Superheat whitepaper on our GPU unit economics."
-   > "/superheat-pitch-deck"  ← invoke explicitly
-
-   Claude reads `CLAUDE.md` → `AGENTS.md`, copies the right template, fills it from your
-   content, and enforces the brand.
-
-### With Codex (or Cursor, Copilot, etc.)
-
-These tools don't have Claude Code's skill mechanism, but they read `AGENTS.md`
-automatically. So:
-
-1. Open `superheat-templates` (or add it to your workspace) so `AGENTS.md` is in scope.
-2. Ask for the document:
-   > "Following AGENTS.md, build a Superheat pitch deck from this memo."
-3. If the agent doesn't pick up `AGENTS.md` on its own, point it there and at the skill
-   file for the detailed steps: `skills/superheat-pitch-deck/SKILL.md` (or
-   `…/superheat-whitepaper/SKILL.md`) — they're plain Markdown playbooks.
-
-### What the agent does either way
-
-Copies the correct `templates/*/template.html`, replaces every `[[placeholder]]` with
-your content, keeps one accent color and DM-Mono numbers, preserves the honest caveats,
-and hands you a self-contained HTML file ready to print to PDF — no build step.
+**Or do it by hand.** Copy [`templates/pitch-deck/template.html`](templates/pitch-deck/)
+or [`templates/whitepaper/template.html`](templates/whitepaper/), replace the
+`[[placeholders]]`, open in Chrome, print to PDF. No build step, no dependencies.
 
 ## The brand in 20 seconds
 
