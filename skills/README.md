@@ -51,3 +51,11 @@ skills read `templates/`, `design-system/`, and `components/` from it.
 > Skills work best when Claude can see both this repo and your source content in the
 > same workspace. Cloning `superheat-templates` as a sibling of your working folder is
 > the simplest setup.
+
+## Not using Claude Code?
+
+The skill mechanism is Claude-Code-specific, but the workflow isn't. Codex, Cursor, and
+other agents read [`../AGENTS.md`](../AGENTS.md) from the repo root — it contains the same
+build workflow and brand rules. The `SKILL.md` files here are plain Markdown playbooks any
+model can follow; point your agent at the relevant one. See
+[Using with AI agents](../README.md#using-with-ai-agents) in the root README.
