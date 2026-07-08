@@ -1,0 +1,48 @@
+/* ============================================================================
+   SUPERHEAT™ DESIGN TOKENS  ·  superheat-tokens.css
+   ----------------------------------------------------------------------------
+   The single source of truth for the Superheat brand: color, type, reset.
+   Import this first, then layer superheat-deck.css or superheat-whitepaper.css.
+
+   Fonts (loaded via Google Fonts in each template <head>):
+     Geist          — body / headlines            (weights 300, 400, 500)
+     DM Mono        — numbers, data, labels        (weights 400, 500)
+     Press Start 2P — pixel kickers / brand tags   (single weight)
+
+   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Geist:wght@300;400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+   ============================================================================ */
+
+:root{
+  /* ---- Brand color ---- */
+  --orange:#FF5500;        /* primary accent — the one brand color */
+  --orange-deep:#F24820;   /* pressed / gradient partner            */
+
+  /* ---- Ink & paper ---- */
+  --ink:#0A0A0A;           /* deck dark background / darkest text    */
+  --ink-2:#1F1F1F;         /* body text on light, softer dark        */
+  --paper:#FFFFFF;         /* white                                  */
+
+  /* ---- Neutrals ---- */
+  --gray:#767676;          /* secondary text on light                */
+  --gray-2:#A8A8A8;        /* secondary text on dark                 */
+
+  /* ---- Surfaces & lines ---- */
+  --card:#F0F0F0;          /* card / table fill on light             */
+  --card-dark:#1A1A1A;     /* card / table fill on dark              */
+  --line:#E0E0E0;          /* hairline on light                      */
+  --line-dark:#2A2A2A;     /* hairline on dark                       */
+
+  /* ---- Type families ---- */
+  --font-sans:'Geist',system-ui,-apple-system,sans-serif;
+  --font-mono:'DM Mono',ui-monospace,monospace;
+  --font-pixel:'Press Start 2P',monospace;
+}
+
+/* ---- Reset ---- */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+/* ---- Utility classes shared across surfaces ---- */
+.mono{font-family:var(--font-mono);}
+.px{font-family:var(--font-pixel);}
+.a{color:var(--orange);}          /* inline accent — wrap a phrase in <span class="a"> */

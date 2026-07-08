@@ -1,0 +1,13 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*~
+.idea/
+.vscode/
+*.swp
+
+# Rendered output — regenerate from the HTML, don't commit
+*.pdf
+
+# Node (only if someone adds tooling later; none is required)
+node_modules/
